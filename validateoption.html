@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validation Options</title>
+</head>
+<body>
+    <form action="">
+        Your Gender : <input type="radio" name="gender" value="male">male
+        <input type="radio" name="gender" value="female">female
+        <br><br>
+        Choice : <input type="checkbox" name="status">AC 
+        <input type="checkbox" name="status">Non AC 
+        <br><br>
+        Course : 
+        <select name="course" id="">
+            <option value="">Select an option:</option>
+            <option value="cse">CSE</option>
+            <option value="mech">Mech</option>
+            <option value="EEE">EEE</option>
+        </select>
+        <br><br>
+        <input type="button" name="SubmitButton" value="Submit" onclick="ValidateForm(this.form)">
+        <input type="reset" value="reset">
+
+    </form>
+
+
+
+    <script>
+        function ValidateForm(form)
+        {
+            if((form.gender[0].checked==false)&&(form.gender[1].checked==false))
+            {
+                alert("Please choose your gender: Male or Female");
+                return false;
+            }
+            if((form.status[0].checked==false)&&(form.status[1].checked==false))
+            {
+                alert("Please choose your choice: AC or Non AC");
+                return false;
+            }
+            if(form.course.selectIndex==0)
+            {
+                alert("Please select some course");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</body>
+</html>
